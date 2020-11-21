@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+<title>Assign</title>
+</head>
+<body>
+<h2 th:text="${assignDto.name}"></h2>
+<ul th:each="test : ${assignDto.tests}">
+ 	<li th:text="${test.name}"></li>
+ 	<ul th:each="ques : ${test.questions}">
+ 		<li th:text="${ques.content}"></li>
+ 		<ul th:each="ans : ${ques.answers}">
+ 			<li th:text="${ans.content}"></li>
+ 		</ul>
+ 	</ul>
+ </ul>
+ <a th:href="@{/editAssign?id={id}(id=${assignDto.id})}">Edit</a>
+<a href="/">Home</a>
+</body>
+</html>

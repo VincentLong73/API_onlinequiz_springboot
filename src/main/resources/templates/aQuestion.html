@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+<meta charset="ISO-8859-1">
+<title>A Question</title>
+</head>
+<body>
+<ul>
+ 	<td th:text="${question.content}"></td>
+ 	<td><a th:href="@{/editQuestion?id={id}(id=${question.id})}">Edit</a></td>
+ 	
+ 	<ul th:each="ans : ${question.answers}">
+ 		
+ 		<td th:text="${ans.content}"></td>
+ 		<td><a th:href="@{/editAnswer?idQ={idQ}&id={id}(id=${ans.id},idQ=${question.id})}">Edit</a></td>
+ 	</ul>
+ </ul>
+ 
+ <a href="/">Home</a>
+</body>
+
+</html>

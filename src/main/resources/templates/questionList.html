@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Danh sach cau tra loi</title>
+</head>
+<body>
+<h1 th:text="#{question.list}"></h1>
+<p>------------------------------------</p>
+<!-- 
+<table>
+	<tr>
+		<th th:text ="#{question.id}"></th>
+		<th th:text ="#{question.idAnswer}"></th>
+		<th th:text ="#{question.idLevel}"></th>
+		<th th:text ="#{question.content}"></th>
+	</tr>
+	
+	<tr th:each="ques : ${questions}">
+		<td th:text="${ques.id}"></td>
+		<td th:text="${ques.idAnswer}"></td>
+		<td th:text="${ques.idLevel}"></td>
+		<td th:text="${ques.question}"></td>
+		<td> <a th:href="@{/editQuestion?id={id}(id=${ques.id})}" class="btn btn-primary">Edit</a>
+		</td>
+		<td> <a th:href="@{/deleteQuestion?id={id}(id=${ques.id})}" class="btn btn-dangerous">Delete</a>
+		</td>
+		
+		
+	</tr>
+	
+	
+</table>
+ -->
+ 
+ <ul th:each="ques : ${questions}">
+ 	<li th:text="${ques.id}"></li>
+ 	<li th:text="${ques.question}"></li>
+ 	
+ 	<ul th:each="ans : ${ques.answers}">
+ 		<li th:text="${ans.id}"></li>
+ 		<li th:text="${ans.answer}"></li>
+ 	</ul>
+ </ul>
+
+</body>
+</html>

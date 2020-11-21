@@ -1,0 +1,25 @@
+<!DOCTYPE html>  
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Edit Answer</title>  
+</head>  
+<body>  
+<div class="col-3"></div>  
+<div class="container col-6">  
+    <h1>Edit Answer</h1>  
+    <form th:action="@{saveAnswer}" method="post">  
+        <input type="hidden" th:field="${answer.id}">
+        <input type="hidden" th:name="questionId" th:value="${question.id}">
+        <div>  
+            <label th:text="Content" th:for="answer"></label>  
+            <input type="text" th:field="${answer.content}" class="form-control"/>  
+        </div>  
+        <div style="clear: both; display: block; height: 10px"></div>  
+        
+        
+        <input type="submit" class="btn btn-success" value="Save"/>  
+    </form>  
+</div>  
+</body>  
+</html>

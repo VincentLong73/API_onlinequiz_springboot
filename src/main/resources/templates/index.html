@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+</head>
+<body>
+<h1 th:text = "#{my.name}"></h1>
+<h2 th:text ="${msg}"></h2>
+
+<a th:href = "@{/answer-list}" th:text="#{answer.list}"></a>
+<br>
+<a th:href = "@{/question-list}" th:text="#{question.list}"></a>
+<br>
+<a th:href = "@{/create}" th:text="#{create.question}"></a>
+<br>
+<a th:href = "@{/testName}" th:text="#{create.test}"></a>
+<br>
+<a th:href = "@{/assignName}" th:text="#{create.assign}"></a>
+</body>
+</html>

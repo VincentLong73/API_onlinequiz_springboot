@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+<title>Edit Assign</title>
+</head>
+<body>
+<h1>Edit Assign</h1>  
+    <form th:action="@{saveAssign}" method="post">  
+        <input type="hidden" th:field="${assignDto.id}">  
+<h2>
+	<label th:text="Name" th:for="name"></label> 
+	<input th:field="${assignDto.name}" type="text"></h2>
+	 
+	<ul><th:block th:each="test : ${assignDto.tests}">
+ 	<li>
+ 	<input type="text" th:value="${test.name}"></li>
+ 	<ul><th:block th:each="ques : ${test.questions}">
+ 		<li><input type="text" th:value="${ques.content}"></li>
+ 		<ul><th:block th:each="ans : ${ques.answers}">
+ 			<li><input type="text" th:value="${ans.content}"></li>
+ 			</th:block>
+ 		</ul>
+ 		</th:block>
+ 	</ul>
+ 	</th:block>
+ </ul>
+ 	
+      <input type="submit" class="btn btn-success" value="Save"/>  
+    </form>  
+</body>
+</html>

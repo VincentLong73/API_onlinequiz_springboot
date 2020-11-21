@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+
+<title>Create Name Test</title>
+</head>
+<body>
+<h1>Create Name Test</h1>
+<form th:action="@{/saveTest}"  method = post>
+	<input type ="text" th:field="*{testDto.name}"/>
+	<input type="submit" value="Save"/>
+</form>
+</body>
+</html>

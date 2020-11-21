@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Danh sach cau tra loi</title>
+</head>
+<body>
+<h1 th:text="#{answer.list}"></h1>
+<h2 th:text="#{answer.test}"></h2>
+<p>------------------------------------</p>
+<table>
+	<tr>
+		<th th:text ="#{answer.id}"></th>
+		<th th:text ="#{answer.content}"></th>
+	</tr>
+	
+	<tr th:each="ans : ${anwers}">
+		<td th:text="${ans.id}"></td>
+		<td th:text="${ans.answer}"></td>
+		
+		<td> <a th:href="@{/deleteAnswer?id={id}(id=${ans.id})}" class="btn btn-primary"  onclick="myFunction()">Delete</a></td>
+		<td> <a th:href="@{/editAnswer?id={id}(id=${ans.id})}" class="btn btn-dangerous">Edit</a> </td>
+	</tr>
+	
+	
+</table>
+<form th:action="@{/answerAdd}" th:object="${answerAdd}" method="post">
+	
+	<input th:field="*{answer}" type = "text"/>
+	<input type="submit" value="Add"/> 
+</form>
+
+<script>
+function myFunction(){
+	//var message = ${msg};
+	var message = "ok";
+	alert(message);
+}
+</script>
+</body>
+</html>

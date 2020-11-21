@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create A Question With 4 Answer</title>
+</head>
+<body>
+<form th:action="@{saveAQuestion}"  method=post>
+<h3>Question</h3>
+<input th:field="${question.content}" type="text"/>
+<input th:field="${question.idLevel}" type="text"/>
+
+<p>---------------------------------------</p>
+
+<h3>Answer</h3>
+<h4>Answer1</h4>
+	<input th:field="${answer1.content}" type = "text"/>
+	<!-- <input id="questionAnswer1" th:field="${questionAnswer1.isCorrect}" type="text"/> -->
+<h4>Answer2</h4>
+	<input th:field="${answer1.content}" type = "text"/>
+	<!-- <input id="questionAnswer1" th:field="${questionAnswer1.isCorrect}" type="text"/> -->
+<h4>Answer3</h4>
+	<input th:field="${answer1.content}" type = "text"/>
+	<!-- <input id="questionAnswer1" th:field="${questionAnswer1.isCorrect}" type="text"/> -->
+<h4>Answer4</h4>
+	<input th:field="${answer1.content}" type = "text"/>
+	<!-- <input id="questionAnswer1" th:field="${questionAnswer1.isCorrect}" type="text"/> -->
+<input type="submit" value="Add"/>
+</form>
+</body>
+</html>

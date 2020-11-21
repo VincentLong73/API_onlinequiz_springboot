@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Testing</title>
+</head>
+<body>
+<h2 th:text="${testDto.name}"></h2>
+<ul th:each="ques : ${questionDtos}">
+ 	<li th:text="${ques.id}"></li>
+ 	<li th:text="${ques.content}"></li>
+ 	
+ 	<ul th:each="ans : ${ques.answers}">
+ 		<li th:text="${ans.id}"></li>
+ 		<li th:text="${ans.content}"></li>
+ 	</ul>
+ </ul>
+ 
+<a href="/">Home</a>
+</body>
+</html>

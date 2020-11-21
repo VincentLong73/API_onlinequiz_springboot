@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+<title>Create Name Of Assign</title>
+</head>
+<body>
+<h2>Assign Name</h2>
+<form th:object="${assignDto}" th:action="@{/saveAssign}" method=post>
+	<input th:field="*{name}" type = "text"/>
+	<input type="submit" value="Save">
+</form>
+</body>
+</html>
